@@ -22,4 +22,8 @@ describe('ListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should init with five elements', () => {
+    expect(component.tasks.length).toBe(5);
+  });
 });
