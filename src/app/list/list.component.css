@@ -1,0 +1,41 @@
+h1,h3 {
+    color:#666;
+}
+input[type="text"],input[type="text"]:focus  {
+    display: block;
+    border-width: 0;
+    border-radius: 1rem;
+}
+
+.wide {
+    width:100%;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#add-task {
+    border-radius: 1rem;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.task-list {
+    width: 300px;
+}
+
+.finished {
+    text-decoration: line-through;
+    color: rgb(100, 100, 100);
+}
+
+.wrapper {
+    width: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    background-color: #eee;
+}

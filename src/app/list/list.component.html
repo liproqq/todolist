@@ -1,1 +1,36 @@
-<p>list works!</p>
+<div class="wrapper">
+    <h1>TODO-List</h1>
+
+    <input class="pending-task shadow p-3 mb-3 center wide bg-white rounded" type="text" [(ngModel)]="pendingTask.name"
+        placeholder="Write your task here">
+
+    <button class="btn btn-success center mb-3" (click)="addTask(pendingTask)" id="add-task">Add task</button>
+
+    <h3>Not finished tasks</h3>
+
+    <div class="unfinished">
+        <div *ngFor="let task of tasks; let i = index">
+            <!-- Listing only unfinished tasks via ngIf -->
+            <div *ngIf="!task.finished" class="shadow p-3 mb-2 wide bg-white rounded">
+                <input (click)="toggleFinished(task)" class="task" type="checkbox" [checked]="task.finished"
+                    id="flexCheckDefault">
+                {{task.name}}
+                <button type="button" (click)="removeTask(i)" class="btn-close">X</button>
+            </div>
+        </div>
+    </div>
+
+    <h3>Finished tasks</h3>
+    
+    <div class="finished">
+        <div *ngFor="let task of tasks; let i = index">
+            <!-- Listing only finished tasks via ngIf -->
+            <div *ngIf="task.finished" class="shadow p-3 mb-2 wide bg-white rounded">
+                <input (click)="toggleFinished(task)" class="task" type="checkbox" [checked]="task.finished"
+                    id="flexCheckDefault">
+                {{task.name}}
+                <button type="button" (click)="removeTask(i)" class="btn-close">X</button>
+            </div>
+        </div>
+    </div>
+</div>
